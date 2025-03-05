@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "cannon_balls=1": {
+      "model": "grandescape:block/cannonball"
+    },
+    "cannon_balls=2": {
+      "model": "grandescape:block/cannonball2"
+    },
+    "cannon_balls=3": {
+      "model": "grandescape:block/cannonball3"
+    },
+    "cannon_balls=4": {
+      "model": "grandescape:block/cannonball4"
+    },
+    "cannon_balls=5": {
+      "model": "grandescape:block/cannonball5"
+    },
+    "cannon_balls=6": {
+      "model": "grandescape:block/cannonball6"
+    },
+    "cannon_balls=7": {
+      "model": "grandescape:block/cannonball7"
+    }
+  }
+}

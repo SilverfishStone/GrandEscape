@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "grandescape:phantom_lighthouse",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 43098054,
+    "spacing": 20,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

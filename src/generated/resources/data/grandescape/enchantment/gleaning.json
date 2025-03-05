@@ -1,0 +1,21 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "translate": "enchantment.grandescape.gleaning"
+  },
+  "exclusive_set": "#minecraft:smelts_loot",
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "hand"
+  ],
+  "supported_items": "#grandescape:scythes",
+  "weight": 10
+}

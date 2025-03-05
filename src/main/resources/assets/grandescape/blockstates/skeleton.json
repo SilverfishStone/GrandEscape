@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+      "model": "grandescape:block/resting_man"
+      },
+      {
+        "model": "grandescape:block/resting_man_2"
+      }
+    ]
+  }
+}

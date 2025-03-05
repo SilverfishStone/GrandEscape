@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 748493372,
+    "separation": 8,
+    "spacing": 40
+  },
+  "structures": [
+    {
+      "structure": "grandescape:cloud_temple",
+      "weight": 1
+    }
+  ]
+}

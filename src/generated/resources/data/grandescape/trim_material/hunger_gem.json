@@ -1,0 +1,9 @@
+{
+  "asset_name": "hunger_gem",
+  "description": {
+    "color": "#AE3058",
+    "translate": "trim_material.grandescape.hunger_gem"
+  },
+  "ingredient": "grandescape:hunger_gem",
+  "item_model_index": 1.1
+}

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "grandescape:piglin_explorer_camp",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 68543467,
+    "spacing": 20,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

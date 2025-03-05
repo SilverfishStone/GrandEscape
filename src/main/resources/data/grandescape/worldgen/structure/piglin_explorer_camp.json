@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:jigsaw",
+  "start_pool": "grandescape:piglin_explorer_camp",
+  "size": 2,
+  "max_distance_from_center": 30,
+  "biomes": "#grandescape:has_structure/piglin_camp",
+  "step": "surface_structures",
+  "start_height": {
+    "type": "minecraft:uniform",
+    "min_inclusive": {
+      "absolute": 33
+    },
+    "max_inclusive": {
+      "absolute": 100
+    }
+  },
+  "terrain_adaptation": "beard_thin",
+  "use_expansion_hack": false,
+  "spawn_overrides": {}
+}

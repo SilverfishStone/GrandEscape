@@ -1,0 +1,6 @@
+// 1.21.1	2025-03-04T15:21:31.6360566	Tags for minecraft:item mod id grandescape
+1771f71dcc571a0bbf1f6f263440f21d6c2afcca data/grandescape/tags/item/chest_keys.json
+abcec9c58ba4d5e6d243b7c64c33da459abd1321 data/minecraft/tags/item/freeze_immune_wearables.json
+01c80316181720501f65ed5f0b3e8eb3c8dc9b2c data/minecraft/tags/item/piglin_loved.json
+5da60d530fe6e11370ebcf7a1017e4d24162132d data/minecraft/tags/item/trimmable_armor.json
+b4311aab9d26af4793601ff42dfa455c111cb638 data/minecraft/tags/item/trim_materials.json
