@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#minecraft:is_deep_ocean",
+  "liquid_settings": "ignore_waterlogging",
+  "max_distance_from_center": 116,
+  "size": 7,
+  "spawn_overrides": {},
+  "start_height": {
+    "absolute": 50
+  },
+  "start_pool": "grandescape:prismarine_lab/entrance",
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_box",
+  "use_expansion_hack": false
+}

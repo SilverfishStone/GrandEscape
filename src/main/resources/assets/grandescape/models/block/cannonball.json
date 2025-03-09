@@ -100,32 +100,34 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"translation": [0, 0, -2],
+			"translation": [0, 1.75, -2],
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"thirdperson_lefthand": {
-			"translation": [0, 0, -2.25],
+			"translation": [0, 1.75, -2.25],
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"firstperson_righthand": {
+			"translation": [4.5, 1, 0],
 			"scale": [0.25, 0.25, 0.25]
 		},
 		"firstperson_lefthand": {
+			"translation": [6, 1, 0],
 			"scale": [0.25, 0.25, 0.25]
 		},
 		"ground": {
-			"translation": [0, 3.75, 0],
-			"scale": [0.7, 0.7, 0.7]
+			"translation": [0, 4.5, 0]
 		},
 		"gui": {
-			"rotation": [-25, -39, 0],
-			"translation": [0, -2, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"rotation": [30, -15, 0],
+			"translation": [0.25, 3.25, 0]
+		},
+		"head": {
+			"translation": [0, 14.5, 0]
 		},
 		"fixed": {
 			"rotation": [-90, 0, 0],
-			"translation": [1.25, 0.5, -16],
-			"scale": [2, 2, 2]
+			"translation": [0, 0, -4.25]
 		}
 	},
 	"groups": [
@@ -133,7 +135,6 @@
 			"name": "ball",
 			"origin": [4, 0, 4],
 			"color": 0,
-			"nbt": "{}",
 			"children": [0, 1, 2, 3, 4, 5, 6]
 		}
 	]

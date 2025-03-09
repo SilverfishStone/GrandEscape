@@ -8,7 +8,7 @@
     "absolute": 33
   },
   "start_pool": "grandescape:crater_village/center",
-  "step": "top_layer_modification",
+  "step": "underground_decoration",
   "terrain_adaptation": "beard_box",
   "use_expansion_hack": false
 }

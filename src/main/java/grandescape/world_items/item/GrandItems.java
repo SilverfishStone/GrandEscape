@@ -41,6 +41,9 @@ public class GrandItems {
     public static final DeferredItem<Item> CUTLASS = ITEMS.register("cutlass",
             () -> new SpecialSwordItem(DIAMOND, new Item.Properties().stacksTo(1).attributes(SwordItem.createAttributes(DIAMOND, 0, -1.2f))));
 
+    public static final DeferredItem<Item> DIVING_BELL = ITEMS.register("diving_bell",
+            () -> new SpecialArmorItems(ArmorMaterials.IRON, ArmorItem.Type.HELMET, new Item.Properties(), 4));
+
 
     public static boolean inHandSlots (LivingEntity living, Item item) {
         return living.getItemBySlot(EquipmentSlot.OFFHAND).is(item) || living.getItemBySlot(EquipmentSlot.MAINHAND).is(item);

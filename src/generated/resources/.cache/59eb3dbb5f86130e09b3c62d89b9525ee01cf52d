@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-04T22:13:17.1583287	Loot Tables
+// 1.21.1	2025-03-09T13:48:25.5378434	Loot Tables
 b1d0e2d98958de8f61382d573d8d152eae97fb53 data/grandescape/loot_table/blocks/absorbing_mushroom.json
 fddd5a074267e3a76a5e0564db744819e0ac5c18 data/grandescape/loot_table/blocks/absorbing_mushroom_block.json
 cce880ff2d28d2615ca77b15ccc46135ec8fc98a data/grandescape/loot_table/blocks/cannonball.json
@@ -14,6 +14,9 @@ a2e196922d1f32f915fa69384342a220e689270e data/grandescape/loot_table/chests/dese
 44b49eb1310037a1bb8392f1dc929a8e821f241a data/grandescape/loot_table/chests/grand_shroom.json
 55e2e256060af1e63552df35cbdccacf977d6476 data/grandescape/loot_table/chests/ice_settlement.json
 f2f6b6c6eb73fd5d63207a364b66929f922f628d data/grandescape/loot_table/chests/mountain_camp.json
-f8111d84962f8bc7b261d21a42f2a5d6b327ff89 data/grandescape/loot_table/chests/phantom_lighthouse.json
+715a301fa4ce6aa28031989559116b7d82fa1944 data/grandescape/loot_table/chests/phantom_lighthouse.json
 09e7d26a69c7f14b070c631cabca97dab8c26911 data/grandescape/loot_table/chests/piglin_explorer_camp.json
+1291379c570fba26344aa7ec9b894baf33899059 data/grandescape/loot_table/chests/prismarine_lab/deep_lab.json
+975fc9199dbf8b36693954d4a68cc06c910eb4d2 data/grandescape/loot_table/chests/prismarine_lab/hall.json
+eec38706685d74ee544441ec376654cd0fb0285e data/grandescape/loot_table/chests/prismarine_lab/upper_lab.json
 dc44e78a2abdce58f5c8e946b71e4befd1e9bc2e data/grandescape/loot_table/chests/strider_hut.json

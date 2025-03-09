@@ -1,6 +1,8 @@
 package grandescape;
 
 import com.mojang.logging.LogUtils;
+import grandescape.function.compat.curios.RegisterModCurios;
+import grandescape.world_items.item.AllTab;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -32,7 +34,7 @@ public class GrandEscape
         GrandBlocks.register(modEventBus);
         GrandItems.register(modEventBus);
         GrandPotions.register(modEventBus);
-        //AllTab.register(modEventBus);
+        AllTab.register(modEventBus);
         GrandBlockEntities.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
@@ -42,7 +44,7 @@ public class GrandEscape
     private void commonSetup(final FMLCommonSetupEvent event) {
 
         if (curiosInstalled()) {
-            //RegisterModCurios.register();
+            RegisterModCurios.register();
         }
     }
 

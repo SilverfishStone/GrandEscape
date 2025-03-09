@@ -1,5 +1,10 @@
-// 1.21.1	2025-03-04T15:21:31.6360566	Tags for minecraft:item mod id grandescape
+// 1.21.1	2025-03-09T11:59:27.9283045	Tags for minecraft:item mod id grandescape
 1771f71dcc571a0bbf1f6f263440f21d6c2afcca data/grandescape/tags/item/chest_keys.json
+3f3b72f5722c7e9f0841de9ef21df29994101dd6 data/grandescape/tags/item/scythes.json
+9b2525395627c29747222e66fc36796e990da504 data/minecraft/tags/item/enchantable/chest_armor.json
+f74399e9e4dac0661f7e8d53bf6c71b5c8bb4a4e data/minecraft/tags/item/enchantable/head_armor.json
+c049d4de6eb4267308fbf9f2b47b36587570d293 data/minecraft/tags/item/enchantable/leg_armor.json
+9d523a56f055cb4df1384961e78c7b1bfdfa6e6e data/minecraft/tags/item/foot_armor.json
 abcec9c58ba4d5e6d243b7c64c33da459abd1321 data/minecraft/tags/item/freeze_immune_wearables.json
 01c80316181720501f65ed5f0b3e8eb3c8dc9b2c data/minecraft/tags/item/piglin_loved.json
 5da60d530fe6e11370ebcf7a1017e4d24162132d data/minecraft/tags/item/trimmable_armor.json

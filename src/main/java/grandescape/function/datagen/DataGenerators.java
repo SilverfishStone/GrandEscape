@@ -2,11 +2,11 @@ package grandescape.function.datagen;
 
 import grandescape.function.datagen.loot.ChestLootProvider;
 import grandescape.function.datagen.loot.GrandBlockLootTables;
+import grandescape.function.datagen.tags.TagProvs;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -34,15 +34,17 @@ public class DataGenerators {
         ), lookupProvider));
         generator.addProvider(event.includeServer(), new GrandRecipeProvider(packOutput, lookupProvider));
 
-        BlockTagsProvider blockTagsProvider = new GrandBlockTagGenerator(packOutput, lookupProvider, existingFileHelper);
+        BlockTagsProvider blockTagsProvider = new TagProvs.GrandBlockTagGenerator(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new GrandItemTagGenerator(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
-        //generator.addProvider(event.includeServer(), new GrandEnchantTags(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new TagProvs.GrandItemTagGenerator(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        //generator.addProvider(event.includeServer(), new TagProvs.GrandEnchantTags(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new TagProvs.GrandBiomeTags(packOutput, lookupProvider));
 
         generator.addProvider(event.includeClient(), new GrandItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new GrandBlockstateProvider(packOutput, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new GrandDatapackProviders(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new GrandENLangProvider(packOutput));
 
 
     }

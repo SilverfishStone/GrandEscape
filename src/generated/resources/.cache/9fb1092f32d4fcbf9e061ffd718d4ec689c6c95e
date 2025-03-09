@@ -1,3 +1,5 @@
-// 1.21.1	2025-03-04T15:21:31.6209097	Recipes
+// 1.21.1	2025-03-07T23:03:13.4056207	Recipes
 a6e036cb32b6e5c8386a0e3769436cab21536353 data/minecraft/advancement/recipes/building_blocks/diamond.json
+688d27da9a2ea50e0f9aa3dc71e5dca705a2f0d8 data/minecraft/advancement/recipes/building_blocks/raw_iron_block.json
 16704de3c41bbd6a254cf724cb3648e8f5b1ad76 data/minecraft/recipe/diamond.json
+32ae8def56171cd1984138257b77c18df4040f44 data/minecraft/recipe/raw_iron_block.json

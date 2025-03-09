@@ -49,6 +49,7 @@ public class GrandItemModelProvider extends ItemModelProvider {
         basicItem(GrandItems.FROZEN_DIAMOND.get());
         basicItem(GrandItems.HUNGER_GEM.get());
         basicItem(GrandItems.DUTCHMANS_KEY.get());
+        basicItem(GrandItems.DIVING_BELL.get());
         basicItem(GrandItems.CUTLASS.get());
         basicItem(GrandBlocks.SKELETON.get().asItem());
         basicItem(GrandBlocks.TREASURE_CHEST.get().asItem());

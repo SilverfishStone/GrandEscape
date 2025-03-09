@@ -14,10 +14,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -30,6 +27,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import grandescape.world_items.enchantments.GrandEnchantments;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Supplier;
 
@@ -45,99 +44,49 @@ public class ReaperItem extends HoeItem {
         Level world = pContext.getLevel();
         Holder<Enchantment> ench = pContext.getLevel().registryAccess().holderOrThrow(GrandEnchantments.GLEANING);
         int Ench = pContext.getItemInHand().getEnchantmentLevel(ench);
-        BlockPos pos = pContext.getClickedPos();
 
-        BlockPos northA = pContext.getClickedPos().north(1);
-        BlockPos southA = pContext.getClickedPos().south(1);
-        BlockPos eastA = pContext.getClickedPos().east(1);
-        BlockPos westA = pContext.getClickedPos().west(1);
-        BlockPos northB = pContext.getClickedPos().north(2);
-        BlockPos southB = pContext.getClickedPos().south(2);
-        BlockPos eastB = pContext.getClickedPos().east(2);
-        BlockPos westB = pContext.getClickedPos().west(2);
-        BlockPos northC = pContext.getClickedPos().north(3);
-        BlockPos southC = pContext.getClickedPos().south(3);
-        BlockPos eastC = pContext.getClickedPos().east(3);
-        BlockPos westC = pContext.getClickedPos().west(3);
-        BlockPos northA2 = pContext.getClickedPos().north(1).west(1);
-        BlockPos southA2 = pContext.getClickedPos().south(1).east(1);
-        BlockPos eastA2 = pContext.getClickedPos().east(1).north(1);
-        BlockPos westA2 = pContext.getClickedPos().west(1).south(1);
-        BlockPos northB2 = pContext.getClickedPos().north(2).west(1);
-        BlockPos southB2 = pContext.getClickedPos().south(2).east(1);
-        BlockPos eastB2 = pContext.getClickedPos().east(2).north(1);
-        BlockPos westB2 = pContext.getClickedPos().west(2).south(1);
-        BlockPos northB3 = pContext.getClickedPos().south(2).west(1);
-        BlockPos southB3 = pContext.getClickedPos().north(2).east(1);
-        BlockPos eastB3 = pContext.getClickedPos().west(2).north(1);
-        BlockPos westB3 = pContext.getClickedPos().east(2).south(1);
-        BlockPos northC3 = pContext.getClickedPos().north(2).west(2);
-        BlockPos southC3 = pContext.getClickedPos().south(2).east(2);
-        BlockPos eastC3 = pContext.getClickedPos().east(2).north(2);
-        BlockPos westC3 = pContext.getClickedPos().west(2).south(2);
+        BlockPos pos = pContext.getClickedPos();
+        List<BlockPos> posesLevel1 = new ArrayList<>();
+        List<BlockPos> posesLevel2 = new ArrayList<>();
+        List<BlockPos> posesLevel3 = new ArrayList<>();
+        posesLevel1.add(pContext.getClickedPos().north(1));
+        posesLevel1.add(pContext.getClickedPos().south(1));
+        posesLevel1.add(pContext.getClickedPos().east(1));
+        posesLevel1.add(pContext.getClickedPos().west(1));
+        posesLevel2.add(pContext.getClickedPos().north(2));
+        posesLevel2.add(pContext.getClickedPos().south(2));
+        posesLevel2.add(pContext.getClickedPos().east(2));
+        posesLevel2.add(pContext.getClickedPos().west(2));
+        posesLevel3.add(pContext.getClickedPos().north(3));
+        posesLevel3.add(pContext.getClickedPos().south(3));
+        posesLevel3.add(pContext.getClickedPos().east(3));
+        posesLevel3.add(pContext.getClickedPos().west(3));
+        posesLevel2.add(pContext.getClickedPos().north(1).west(1));
+        posesLevel2.add(pContext.getClickedPos().south(1).east(1));
+        posesLevel2.add(pContext.getClickedPos().east(1).north(1));
+        posesLevel2.add(pContext.getClickedPos().west(1).south(1));
+        posesLevel3.add(pContext.getClickedPos().north(2).west(1));
+        posesLevel3.add(pContext.getClickedPos().south(2).east(1));
+        posesLevel3.add(pContext.getClickedPos().east(2).north(1));
+        posesLevel3.add(pContext.getClickedPos().west(2).south(1));
+        posesLevel3.add(pContext.getClickedPos().south(2).west(1));
+        posesLevel3.add(pContext.getClickedPos().north(2).east(1));
+        posesLevel3.add(pContext.getClickedPos().west(2).north(1));
+        posesLevel3.add(pContext.getClickedPos().east(2).south(1));
+        posesLevel3.add(pContext.getClickedPos().north(2).west(2));
+        posesLevel3.add(pContext.getClickedPos().south(2).east(2));
+        posesLevel3.add(pContext.getClickedPos().east(2).north(2));
+        posesLevel3.add(pContext.getClickedPos().west(2).south(2));
 
         BlockState blockstate = world.getBlockState(pos);
-        BlockState north1 = world.getBlockState(northA);
-        BlockState south1 = world.getBlockState(southA);
-        BlockState east1 = world.getBlockState(eastA);
-        BlockState west1 = world.getBlockState(westA);
-        BlockState north2 = world.getBlockState(northB);
-        BlockState south2 = world.getBlockState(southB);
-        BlockState east2 = world.getBlockState(eastB);
-        BlockState west2 = world.getBlockState(westB);
-        BlockState north2A = world.getBlockState(northA2);
-        BlockState south2A = world.getBlockState(southA2);
-        BlockState east2A = world.getBlockState(eastA2);
-        BlockState west2A = world.getBlockState(westA2);
-        BlockState north3 = world.getBlockState(northC);
-        BlockState south3 = world.getBlockState(southC);
-        BlockState east3 = world.getBlockState(eastC);
-        BlockState west3 = world.getBlockState(westC);
-        BlockState north4 = world.getBlockState(northB2);
-        BlockState south4 = world.getBlockState(southB2);
-        BlockState east4 = world.getBlockState(eastB2);
-        BlockState west4 = world.getBlockState(westB2);
-        BlockState north5 = world.getBlockState(northB3);
-        BlockState south5 = world.getBlockState(southB3);
-        BlockState east5 = world.getBlockState(eastB3);
-        BlockState west5 = world.getBlockState(westB3);
-        BlockState north3A = world.getBlockState(northC3);
-        BlockState south3A = world.getBlockState(southC3);
-        BlockState east3A = world.getBlockState(eastC3);
-        BlockState west3A = world.getBlockState(westC3);
 
         Block crop = blockstate.getBlock();
         if (crop instanceof CropBlock cropBlock) {
             if (cropBlock.getAge(blockstate) == cropBlock.getMaxAge()) {
                 reap(0, Ench, world, blockstate, pos);
-                reap(1, Ench, world, west1, westA);
-                reap(1, Ench, world, east1, eastA);
-                reap(1, Ench, world, north1, northA);
-                reap(1, Ench, world, south1, southA);
-                reap(2, Ench, world, west2, westB);
-                reap(2, Ench, world, east2, eastB);
-                reap(2, Ench, world, north2, northB);
-                reap(2, Ench, world, south2, southB);
-                reap(2, Ench, world, west2A, westA2);
-                reap(2, Ench, world, east2A, eastA2);
-                reap(2, Ench, world, north2A, northA2);
-                reap(2, Ench, world, south2A, southA2);
-                reap(3, Ench, world, west3, westC);
-                reap(3, Ench, world, east3, eastC);
-                reap(3, Ench, world, north3, northC);
-                reap(3, Ench, world, south3, southC);
-                reap(3, Ench, world, west4, westB2);
-                reap(3, Ench, world, east4, eastB2);
-                reap(3, Ench, world, north4, northB2);
-                reap(3, Ench, world, south4, southB2);
-                reap(3, Ench, world, west5, westB3);
-                reap(3, Ench, world, east5, eastB3);
-                reap(3, Ench, world, north5, northB3);
-                reap(3, Ench, world, south5, southB3);
-                reap(3, Ench, world, west3A, westC3);
-                reap(3, Ench, world, east3A, eastC3);
-                reap(3, Ench, world, north3A, northC3);
-                reap(3, Ench, world, south3A, southC3);
+                posesLevel1.forEach(posB -> reap(1, Ench, world, world.getBlockState(posB), posB));
+                posesLevel2.forEach(posB -> reap(2, Ench, world, world.getBlockState(posB), posB));
+                posesLevel3.forEach(posB -> reap(3, Ench, world, world.getBlockState(posB), posB));
                 if (!gamemodeCreative(pContext.getPlayer())) {
                     pContext.getItemInHand().hurtAndBreak(1, Objects.requireNonNull(pContext.getPlayer()), Objects.requireNonNull(pContext.getItemInHand().getEquipmentSlot()));
                 }
@@ -150,7 +99,76 @@ public class ReaperItem extends HoeItem {
         }
     }
 
+    public static void useReaper (Level world, Player player, BlockPos pos, ItemStack stack) {
+        Holder<Enchantment> ench = world.registryAccess().holderOrThrow(GrandEnchantments.GLEANING);
+        int Ench = stack.getEnchantmentLevel(ench);
+
+        List<BlockPos> posesLevel1 = new ArrayList<>();
+        List<BlockPos> posesLevel2 = new ArrayList<>();
+        List<BlockPos> posesLevel3 = new ArrayList<>();
+        posesLevel1.add(pos.north(1));
+        posesLevel1.add(pos.south(1));
+        posesLevel1.add(pos.east(1));
+        posesLevel1.add(pos.west(1));
+        posesLevel2.add(pos.north(2));
+        posesLevel2.add(pos.south(2));
+        posesLevel2.add(pos.east(2));
+        posesLevel2.add(pos.west(2));
+        posesLevel3.add(pos.north(3));
+        posesLevel3.add(pos.south(3));
+        posesLevel3.add(pos.east(3));
+        posesLevel3.add(pos.west(3));
+        posesLevel2.add(pos.north(1).west(1));
+        posesLevel2.add(pos.south(1).east(1));
+        posesLevel2.add(pos.east(1).north(1));
+        posesLevel2.add(pos.west(1).south(1));
+        posesLevel3.add(pos.north(2).west(1));
+        posesLevel3.add(pos.south(2).east(1));
+        posesLevel3.add(pos.east(2).north(1));
+        posesLevel3.add(pos.west(2).south(1));
+        posesLevel3.add(pos.south(2).west(1));
+        posesLevel3.add(pos.north(2).east(1));
+        posesLevel3.add(pos.west(2).north(1));
+        posesLevel3.add(pos.east(2).south(1));
+        posesLevel3.add(pos.north(2).west(2));
+        posesLevel3.add(pos.south(2).east(2));
+        posesLevel3.add(pos.east(2).north(2));
+        posesLevel3.add(pos.west(2).south(2));
+
+        BlockState blockstate = world.getBlockState(pos);
+        int i = stack.getItem() instanceof ReaperItem ? Ench : Ench - 1;
+
+        Block crop = blockstate.getBlock();
+        if (crop instanceof CropBlock cropBlock) {
+            if (cropBlock.getAge(blockstate) == cropBlock.getMaxAge()) {
+                if (!(stack.getItem() instanceof ReaperItem)) reapStatic(0, i, world, blockstate, pos);
+                posesLevel1.forEach(posB -> reapStatic(1, i, world, world.getBlockState(posB), posB));
+                posesLevel2.forEach(posB -> reapStatic(2, i, world, world.getBlockState(posB), posB));
+                posesLevel3.forEach(posB -> reapStatic(3, i, world, world.getBlockState(posB), posB));
+                if (!player.isCreative()) {
+                    stack.hurtAndBreak(1, Objects.requireNonNull(player), Objects.requireNonNull(stack.getEquipmentSlot()));
+                }
+            }
+        }
+    }
+
     public void reap (int required, int levelEnch, Level levelPoint, BlockState state, BlockPos position) {
+        if (required <= levelEnch) {
+            if (state.getBlock() instanceof CropBlock setcropBlock) {
+                if (setcropBlock.getAge(state) == setcropBlock.getMaxAge()) {
+                    if (levelPoint instanceof ServerLevel) {
+                        getDrops(state, (ServerLevel) levelPoint, position, null).forEach((p_152406_) -> {
+                            popResource(levelPoint, position, p_152406_);
+                        });
+                        state.spawnAfterBreak((ServerLevel) levelPoint, position, ItemStack.EMPTY, false);
+                    }
+                    levelPoint.setBlock(position, setcropBlock.getStateForAge(1), 3);
+                }
+            }
+        }
+    }
+
+    public static void reapStatic (int required, int levelEnch, Level levelPoint, BlockState state, BlockPos position) {
         if (required <= levelEnch) {
             if (state.getBlock() instanceof CropBlock setcropBlock) {
                 if (setcropBlock.getAge(state) == setcropBlock.getMaxAge()) {

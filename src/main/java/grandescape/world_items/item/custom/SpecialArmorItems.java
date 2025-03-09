@@ -2,7 +2,10 @@ package grandescape.world_items.item.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -10,6 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FrostedIceBlock;
@@ -23,6 +27,7 @@ import java.util.Iterator;
 public class SpecialArmorItems extends ArmorItem {
     public int type;
     public Type armor;
+    public static BlockPos prevP;
 
     public SpecialArmorItems(Holder<ArmorMaterial> pMaterial, Type pType, Properties pProperties, int type) {
         super(pMaterial, pType, pProperties);
@@ -42,15 +47,19 @@ public class SpecialArmorItems extends ArmorItem {
             float entityMoveDist = player.moveDist;
             if (!pEntity.level().isClientSide) {
                 BlockPos blockpos = player.blockPosition();
-                if (player.xOld != player.getX() || player.zOld != player.getZ()) {
+                if (prevP != blockpos) {
                     onEntityMoved(player, pLevel, blockpos, 2);
                 }
             }
             player.setIsInPowderSnow(false);
         }
+        if (type == 4) {
+            divingHelmetTick(player);
+        }
     }
 
     public static void onEntityMoved(LivingEntity pLiving, Level pLevel, BlockPos pPos, int pLevelConflicting) {
+        prevP = pPos;
         if (pLiving.onGround()) {
             BlockState blockstate = Blocks.FROSTED_ICE.defaultBlockState();
             int i = Math.min(16, 2 + pLevelConflicting);
@@ -95,6 +104,13 @@ public class SpecialArmorItems extends ArmorItem {
             canRepair = this.material.value().repairIngredient().get().test(this.getDefaultInstance());
         }
         return canRepair || super.isValidRepairItem(toRepair, repair);
+    }
+
+    private void divingHelmetTick(Player player) {
+        ItemStack itemstack = player.getItemBySlot(EquipmentSlot.HEAD);
+        if (itemstack.is(GrandItems.DIVING_BELL) && !player.isEyeInFluid(FluidTags.WATER)) {
+            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1200, 0, false, false, true));
+        }
     }
 }
 

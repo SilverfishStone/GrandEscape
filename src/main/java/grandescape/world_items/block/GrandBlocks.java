@@ -22,7 +22,7 @@ public class GrandBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(GrandEscape.MODID);
 
     public static final DeferredBlock<Block> SKELETON = registerBlock("skeleton",
-            set -> new SkeletonBlock(BlockBehaviour.Properties.of()), BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK).sound(SoundType.BONE_BLOCK).noOcclusion().noCollission());
+            set -> new SkeletonBlock(BlockBehaviour.Properties.of().noOcclusion()), BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK).sound(SoundType.BONE_BLOCK).noOcclusion().noCollission());
     public static final DeferredBlock<Block> ABSORBING_MUSHROOM = registerBlock("absorbing_mushroom",
             set -> new MushroomBlock(TreeFeatures.HUGE_RED_MUSHROOM, BlockBehaviour.Properties.of()), BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM).mapColor(MapColor.COLOR_YELLOW).lightLevel((absorb) -> 15));
     public static final DeferredBlock<Block> POTTED_ABSORBING_MUSHROOM = registerBlock("potted_absorbing_mushroom",
@@ -32,7 +32,7 @@ public class GrandBlocks {
 
 
     public static final DeferredBlock<Block> TREASURE_CHEST = registerBlock("treasure_chest",
-            set -> new TreasureChestBlock(BlockBehaviour.Properties.of()), BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST));
+            set -> new TreasureChestBlock(BlockBehaviour.Properties.of().destroyTime(Blocks.CHEST.defaultDestroyTime() * 20)), BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST));
     public static final DeferredBlock<Block> CANNON_BALL_PILE = registerBlock("cannonball",
             set -> new CannonballBlock(BlockBehaviour.Properties.of().noOcclusion()), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
 

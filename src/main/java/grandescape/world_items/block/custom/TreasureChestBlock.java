@@ -1,6 +1,7 @@
 package grandescape.world_items.block.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;
@@ -41,6 +42,8 @@ public class TreasureChestBlock extends ChestBlock {
                 player.openMenu(menuprovider);
                 player.awardStat(super.getOpenChestStat());
                 PiglinAi.angerNearbyPiglins(player, true);
+            } else {
+                player.displayClientMessage(Component.translatable("block.grandescape.treasure_chest.info"), true);
             }
             return InteractionResult.CONSUME;
         }

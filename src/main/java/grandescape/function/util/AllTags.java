@@ -25,6 +25,7 @@ public class AllTags {
     }
     public static class Biomes {
         public static final TagKey<Biome> BASALT = create("basalt");
+        public static final TagKey<Biome> MUSHROOM = create("mushroom");
 
         public static TagKey<Biome> create(String pName) {
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(GrandEscape.MODID, pName));

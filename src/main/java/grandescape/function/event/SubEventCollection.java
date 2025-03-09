@@ -1,6 +1,10 @@
 package grandescape.function.event;
 
+import grandescape.world_items.enchantments.GrandEnchantments;
+import grandescape.world_items.item.custom.ReaperItem;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -17,12 +21,14 @@ import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.armortrim.ArmorTrim;
 import net.minecraft.world.item.armortrim.TrimMaterial;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import grandescape.GrandEscape;
 import grandescape.world_items.block.GrandBlocks;
@@ -46,6 +52,11 @@ public class SubEventCollection {
     }
 
     @SubscribeEvent
+    public static void playerUseTool (UseItemOnBlockEvent event) {
+        if (event.getPlayer() != null) reaperEnchOnHoe(event.getItemStack(), event.getPlayer(), event.getLevel(), event.getPos());
+    }
+
+    @SubscribeEvent
     public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {
         PotionBrewing.Builder builder = event.getBuilder();
 
@@ -58,6 +69,15 @@ public class SubEventCollection {
     public static void playerDestroyBegin (PlayerInteractEvent.LeftClickBlock event) {
         destroyTreasure(event.getEntity(), event.getLevel().getBlockState(event.getPos()), event.getPos(), event.getLevel());
     }
+
+    public static void reaperEnchOnHoe (ItemStack stack, Player player, Level level, BlockPos pos) {
+        HolderLookup.RegistryLookup<Enchantment> lookup = player.registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT);
+        Holder<Enchantment> gleaning = lookup.getOrThrow(GrandEnchantments.GLEANING);
+        if (!(stack.getItem() instanceof ReaperItem) && stack.getEnchantmentLevel(gleaning) > 0) {
+            ReaperItem.useReaper(level, player, pos, stack);
+        }
+    }
+
     public static void frostwalkers(Player player, Level level) {
         if (player.getItemBySlot(EquipmentSlot.FEET).is(GrandItems.FROST_WALKERS.get())) {
             if (!level.isClientSide) {

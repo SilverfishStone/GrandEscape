@@ -53,6 +53,9 @@ public record ChestLootProvider(HolderLookup.Provider registries) implements Loo
     public static final ResourceKey<LootTable> MOUNTAIN_CAMP = register("chests/mountain_camp");
     public static final ResourceKey<LootTable> PIGLIN_EXPLORER_CAMP = register("chests/piglin_explorer_camp");
     public static final ResourceKey<LootTable> STRIDER_HUT = register("chests/strider_hut");
+    public static final ResourceKey<LootTable> PRISMARINE_LAB_HALL = register("chests/prismarine_lab/hall");
+    public static final ResourceKey<LootTable> PRISMARINE_LAB = register("chests/prismarine_lab/upper_lab");
+    public static final ResourceKey<LootTable> PRISMARINE_DEEP_LAB = register("chests/prismarine_lab/deep_lab");
 
 
     private static ResourceKey<LootTable> register(String nameS) {
@@ -178,7 +181,8 @@ public record ChestLootProvider(HolderLookup.Provider registries) implements Loo
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(LootItem.lootTableItem(Items.DIAMOND).setWeight(1)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                        .add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(10))
+                        .add(LootItem.lootTableItem(Items.ENCHANTED_BOOK).setWeight(10)
+                                .apply(new EnchantWithLevelsFunction.Builder(UniformGenerator.between(34, 76))))
                         .add(LootItem.lootTableItem(Items.DIAMOND_SHOVEL).setWeight(5)
                                 .apply(new EnchantWithLevelsFunction.Builder(UniformGenerator.between(34, 76)))))
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
@@ -261,7 +265,7 @@ public record ChestLootProvider(HolderLookup.Provider registries) implements Loo
                         .add(LootItem.lootTableItem(Items.BREAD).setWeight(2)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))))
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-                        .add(EmptyLootItem.emptyItem().setWeight(5))
+                        .add(EmptyLootItem.emptyItem().setWeight(1))
                         .add(LootItem.lootTableItem(GrandItems.REAPER).setWeight(1))));
 
         output.accept(PIGLIN_EXPLORER_CAMP, LootTable.lootTable()
@@ -316,5 +320,59 @@ public record ChestLootProvider(HolderLookup.Provider registries) implements Loo
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                         .add(EmptyLootItem.emptyItem().setWeight(5))
                         .add(LootItem.lootTableItem(Items.SADDLE).setWeight(5))));
+
+        output.accept(PRISMARINE_LAB_HALL, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(2.0F, 4.0F))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 7.0F))))
+                        .add(LootItem.lootTableItem(Items.KELP).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))))
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(2.0F, 3.0F))
+                        .add(LootItem.lootTableItem(Items.TROPICAL_FISH).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
+                        .add(LootItem.lootTableItem(Items.COD).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                        .add(LootItem.lootTableItem(Items.SALMON).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                        .add(LootItem.lootTableItem(Items.INK_SAC).setWeight(3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.TRIDENT).setWeight(1)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+                                .apply(new EnchantWithLevelsFunction.Builder(UniformGenerator.between(3, 35))))
+                        .add(EmptyLootItem.emptyItem().setWeight(5))));
+
+
+        output.accept(PRISMARINE_LAB, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(2.0F, 4.0F))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 7.0F))))
+                        .add(LootItem.lootTableItem(Items.KELP).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))))
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 3.0F))
+                        .add(LootItem.lootTableItem(Items.IRON_INGOT).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
+                        .add(LootItem.lootTableItem(Items.GOLD_INGOT).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                        .add(LootItem.lootTableItem(Items.IRON_BLOCK).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))))
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 3.0F))
+                        .add(LootItem.lootTableItem(Items.GLASS_BOTTLE).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                        .add(LootItem.lootTableItem(Items.POTION).setWeight(2)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+                                .apply(SetPotionFunction.setPotion(Potions.WATER_BREATHING))))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.IRON_BOOTS)
+                                .apply(EnchantRandomlyFunction.randomEnchantment().withEnchantment(registrylookup.getOrThrow(Enchantments.DEPTH_STRIDER)))
+                                .apply(EnchantWithLevelsFunction.enchantWithLevels(registries, UniformGenerator.between(0, 30))))));
+
+        output.accept(PRISMARINE_DEEP_LAB, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 2.0F))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 7.0F))))
+                        .add(LootItem.lootTableItem(Items.KELP).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))))
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(2.0F, 4.0F))
+                        .add(LootItem.lootTableItem(Items.IRON_INGOT).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
+                        .add(LootItem.lootTableItem(Items.DIAMOND).setWeight(1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+                        .add(LootItem.lootTableItem(Items.GOLD_BLOCK).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))))
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 2.0F))
+                        .add(LootItem.lootTableItem(Items.GLASS_BOTTLE).setWeight(5).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                        .add(LootItem.lootTableItem(Items.POTION).setWeight(2)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+                                .apply(SetPotionFunction.setPotion(Potions.WATER_BREATHING)))
+                        .add(LootItem.lootTableItem(Items.HEART_OF_THE_SEA).setWeight(1)))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(GrandItems.DIVING_BELL)
+                                .apply(EnchantRandomlyFunction.randomEnchantment().withEnchantment(registrylookup.getOrThrow(Enchantments.UNBREAKING)))
+                                .apply(EnchantWithLevelsFunction.enchantWithLevels(registries, UniformGenerator.between(0, 30))))));
+
     }
 }
