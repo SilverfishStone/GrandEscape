@@ -1,12 +1,13 @@
 {
   "block.grandescape.absorbing_mushroom": "Absorbing Mushroom",
   "block.grandescape.absorbing_mushroom_block": "Absorbing Mushroom Block",
-  "block.grandescape.cannonball": "Cannonball Pile",
+  "block.grandescape.cannonball": "Cannonball",
   "block.grandescape.potted_absorbing_mushroom": "Absorbing Mushroom in a Pot",
   "block.grandescape.skeleton": "Skeleton Block",
   "block.grandescape.treasure_chest": "Treasure Chest",
   "block.grandescape.treasure_chest.destroy": "Destroying a Treasure Chest will destroy the loot inside.",
   "block.grandescape.treasure_chest.info": "Opening a Treasure Chest requires a key...",
+  "creativetab.grandescape.grand_escape_items_tab": "Grand Escape",
   "enchantment.grandescape.gleaning": "Gleaning",
   "enchantment.grandescape.gleaning.desc": "More crops can be harvested harvested per level.",
   "item.grandescape.angel_shoes": "Angel Shoes",
@@ -22,6 +23,6 @@
   "item.grandescape.piglin_leggings": "Piglin Leggings",
   "item.grandescape.reaper": "Reaper",
   "item.grandescape.stale_bread": "Stale Bread",
-  "item.minecraft.potion.absorption": "AbsorptionPotion",
+  "item.minecraft.potion.effect.absorption": "AbsorptionPotion",
   "trim_material.minecraft.hunger_gem": "Hunger Gem Material"
 }

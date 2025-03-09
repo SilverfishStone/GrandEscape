@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-09T13:48:25.5378434	Loot Tables
+// 1.21.1	2025-03-09T14:31:40.7315247	Loot Tables
 b1d0e2d98958de8f61382d573d8d152eae97fb53 data/grandescape/loot_table/blocks/absorbing_mushroom.json
 fddd5a074267e3a76a5e0564db744819e0ac5c18 data/grandescape/loot_table/blocks/absorbing_mushroom_block.json
 cce880ff2d28d2615ca77b15ccc46135ec8fc98a data/grandescape/loot_table/blocks/cannonball.json
@@ -7,7 +7,7 @@ a15f5399aa1b98f76162b705061e8b97ce4e30fe data/grandescape/loot_table/blocks/pott
 24128675489f88553e9d70e20df511c722312cb8 data/grandescape/loot_table/blocks/treasure_chest.json
 850473352828e6971d9abcedf30d3a0f5903d523 data/grandescape/loot_table/chests/cloud_temple.json
 e71b983285ebf7e1ecd25cd340b092afde7c3679 data/grandescape/loot_table/chests/desert_catacomb_room.json
-a2e196922d1f32f915fa69384342a220e689270e data/grandescape/loot_table/chests/desert_catacomb_treasure.json
+652f60ad7a4cc68a312efd3be576bd0d45b1a919 data/grandescape/loot_table/chests/desert_catacomb_treasure.json
 6961bfe1242e70eca87639d5748c1c56cc8b16ab data/grandescape/loot_table/chests/dutchman_ship/dutchmans_treasure.json
 24ca1a55f9ccf8eb3769dbedf9a6982547d27c91 data/grandescape/loot_table/chests/dutchman_ship/dutchman_barrel.json
 7c2504b6d4d3b0471a0a01e53941b56ec60e05cd data/grandescape/loot_table/chests/dutchman_ship/dutchman_brig.json
@@ -15,7 +15,7 @@ a2e196922d1f32f915fa69384342a220e689270e data/grandescape/loot_table/chests/dese
 55e2e256060af1e63552df35cbdccacf977d6476 data/grandescape/loot_table/chests/ice_settlement.json
 f2f6b6c6eb73fd5d63207a364b66929f922f628d data/grandescape/loot_table/chests/mountain_camp.json
 715a301fa4ce6aa28031989559116b7d82fa1944 data/grandescape/loot_table/chests/phantom_lighthouse.json
-09e7d26a69c7f14b070c631cabca97dab8c26911 data/grandescape/loot_table/chests/piglin_explorer_camp.json
+2d7706ad53ccb22b6628fa7ef1bf9c9f7d99048f data/grandescape/loot_table/chests/piglin_explorer_camp.json
 1291379c570fba26344aa7ec9b894baf33899059 data/grandescape/loot_table/chests/prismarine_lab/deep_lab.json
 975fc9199dbf8b36693954d4a68cc06c910eb4d2 data/grandescape/loot_table/chests/prismarine_lab/hall.json
 eec38706685d74ee544441ec376654cd0fb0285e data/grandescape/loot_table/chests/prismarine_lab/upper_lab.json

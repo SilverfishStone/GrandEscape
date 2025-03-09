@@ -37,7 +37,7 @@ public class GrandENLangProvider extends LanguageProvider {
         treasureChest();
         addBlock(GrandBlocks.ABSORBING_MUSHROOM, "Absorbing Mushroom");
         addBlock(GrandBlocks.ABSORBING_MUSHROOM_BLOCK, "Absorbing Mushroom Block");
-        addBlock(GrandBlocks.CANNON_BALL_PILE, "Cannonball Pile");
+        addBlock(GrandBlocks.CANNON_BALL_PILE, "Cannonball");
         addBlock(GrandBlocks.SKELETON, "Skeleton Block");
         addBlock(GrandBlocks.POTTED_ABSORBING_MUSHROOM, "Absorbing Mushroom in a Pot");
         addEnchantment(GrandEnchantments.GLEANING, "Gleaning", "More crops can be harvested harvested per level.");

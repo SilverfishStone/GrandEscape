@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-04T15:21:31.6279292	Item Models: grandescape
+// 1.21.1	2025-03-09T14:26:15.7927332	Item Models: grandescape
 07d02003801c5a12816b12e574994bf91159bbae assets/grandescape/models/item/angel_shoes.json
 ced9083df0072e730d30f348e2cd67ec8319f63b assets/grandescape/models/item/angel_shoes_amethyst_trim.json
 e485460b2b081fe55fa6b178e91cf46b290bc8ae assets/grandescape/models/item/angel_shoes_copper_trim.json
@@ -12,6 +12,7 @@ fde1a103c25a1ff640b0df116bd9a58524450917 assets/grandescape/models/item/angel_sh
 21d7277bc227d9473b5fae00504aba1b6d6db704 assets/grandescape/models/item/angel_shoes_redstone_trim.json
 026224c972df6c7eab956ea4296eed8c932ce05a assets/grandescape/models/item/cannonball.json
 9d88ad7bb7733d2c8d05597e18a9798749322813 assets/grandescape/models/item/cutlass.json
+0e243d6ae564e1ed84cf53fa2532f5f85df90b0e assets/grandescape/models/item/diving_bell.json
 b85b530816c9a8dc42f3f8244d78ce58ef165441 assets/grandescape/models/item/dutchmans_key.json
 80ae02dfd78ff75115c37a79b4cc52665c4a8bab assets/grandescape/models/item/frost_walkers.json
 ab3b56a6ef3dd8bdfc4121fd643006fe80ca4aa0 assets/grandescape/models/item/frost_walkers_amethyst_trim.json
